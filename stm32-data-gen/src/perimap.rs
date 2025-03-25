@@ -105,6 +105,7 @@ pub static PERIMAP: RegexMap<(&str, &str, &str)> = RegexMap::new(&[
     (".*:ADC:aditf5_40v2_U5", ("adc", "u5", "ADC")),
     (".*:ADC:aditf5_40v1_U5", ("adc", "u5", "ADC")),
     (".*:ADC:aditf4_v4_U5", ("adc", "u5", "ADC4")),
+    // (".*:ADC:aditf5_v3_0_H7RS", ("adc", "h7rs", "ADC")), //TODO: Verify if embassy-stm32 changes are actually necessary
     ("STM32WL5.*:ADC:.*", ("adc", "g0", "ADC")),
     ("STM32WLE.*:ADC:.*", ("adc", "g0", "ADC")),
     ("STM32C0.*:ADC:.*", ("adc", "c0", "ADC")),
@@ -124,6 +125,7 @@ pub static PERIMAP: RegexMap<(&str, &str, &str)> = RegexMap::new(&[
     ("STM32F[247].*:ADC\\d*_COMMON:.*", ("adccommon", "v2", "ADC_COMMON")),
     ("STM32H50.*:ADC\\d*_COMMON:.*", ("adccommon", "h50", "ADC_COMMON")),
     ("STM32H5.*:ADC\\d*_COMMON:.*", ("adccommon", "h5", "ADC_COMMON")),
+    // ("STM32H7[RS].*:ADC\\d*_COMMON:.*", ("adccommon", "h5", "ADC_COMMON")), //TODO: Waiting for above to enable ADC Common
     ("STM32H7.*:ADC\\d*_COMMON:.*", ("adccommon", "v4", "ADC_COMMON")),
     ("STM32F373.*:SDADC:.*", ("sdadc", "v1", "SDADC")),
     ("STM32F301.*:SDADC:.*", ("sdadc", "v1", "SDADC")),
@@ -496,6 +498,7 @@ pub static PERIMAP: RegexMap<(&str, &str, &str)> = RegexMap::new(&[
     ("STM32H7.*:DMA.*", ("dma", "v1", "DMA")),
     (".*:DMA.*", ("bdma", "v1", "DMA")),
     (".*:CAN:bxcan1_v1_1.*", ("can", "bxcan", "CAN")),
+    ("STM32H7[RS].*FDCAN:fdcan1_v1_[01].*", ("can", "fdcan_h7s", "FDCAN")),
     ("STM32H7.*:FDCAN:fdcan1_v1_[01].*", ("can", "fdcan_h7", "FDCAN")),
     (".*:FDCAN:fdcan1_v1_[01].*", ("can", "fdcan_v1", "FDCAN")),
     ("STM32H7.*:FDCANRAM.*", ("fdcanram", "h7", "FDCANRAM")),
